@@ -1,8 +1,5 @@
 import { ReactNode } from "react";
-import {
-  QueryClient,
-  QueryClientProvider as ReactQueryClientProvider,
-} from "react-query";
+import { QueryClient, QueryClientProvider as ReactQueryClientProvider } from "react-query";
 
 export type QueryClientProviderProps = {
   children: ReactNode;
@@ -20,9 +17,5 @@ export const QueryClientProvider = (props: QueryClientProviderProps) => {
     },
   });
 
-  return (
-    <ReactQueryClientProvider client={queryClient}>
-      {children}
-    </ReactQueryClientProvider>
-  );
+  return <ReactQueryClientProvider client={queryClient}>{children}</ReactQueryClientProvider>;
 };
