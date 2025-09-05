@@ -3,7 +3,7 @@ import Axios, {
   AxiosInterceptorOptions,
   AxiosRequestConfig,
   AxiosResponse,
-  InternalAxiosRequestConfig
+  InternalAxiosRequestConfig,
 } from "axios";
 
 export type AxiosInstance = AxiosInstanceType;
@@ -12,9 +12,7 @@ export type AxiosInstanceConfig<TRequestData = unknown> = AxiosRequestConfig<TRe
 export type RequestInterceptor<TRequestData = unknown, TError = unknown> = {
   onFulfilled?: (
     value: InternalAxiosRequestConfig<TRequestData>
-  ) =>
-    | InternalAxiosRequestConfig<TRequestData>
-    | Promise<InternalAxiosRequestConfig<TRequestData>>;
+  ) => InternalAxiosRequestConfig<TRequestData> | Promise<InternalAxiosRequestConfig<TRequestData>>;
   onRejected?: (error: TError) => any | Promise<any>;
   options?: AxiosInterceptorOptions;
 };
@@ -22,9 +20,7 @@ export type RequestInterceptor<TRequestData = unknown, TError = unknown> = {
 export type ResponseInterceptor<TData = unknown, TRequestData = unknown, TError = unknown> = {
   onFulfilled?: (
     value: AxiosResponse<TData, TRequestData>
-  ) =>
-    | AxiosResponse<TData, TRequestData>
-    | Promise<AxiosResponse<TData, TRequestData>>;
+  ) => AxiosResponse<TData, TRequestData> | Promise<AxiosResponse<TData, TRequestData>>;
   onRejected?: (error: TError) => any | Promise<any>;
   options?: AxiosInterceptorOptions;
 };

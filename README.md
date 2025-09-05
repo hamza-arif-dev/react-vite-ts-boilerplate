@@ -1,6 +1,7 @@
 # react-vite-ts-boilerplate
 
-A modern and flexible React + TypeScript boilerplate designed for scalable frontend applications. It includes essential libraries, strict linting rules, and a modular architecture to jumpstart your project with ease.
+A modern and flexible React + TypeScript boilerplate designed for scalable frontend applications. It includes essential
+libraries, strict linting rules, and a modular architecture to jumpstart your project with ease.
 
 ---
 
@@ -36,7 +37,7 @@ pnpm run dev
 
 ## 🧰 Notes
 
-- You can modify eslint.config.js to customize linting rules.
+- You can modify eslint.config.mjs to customize linting rules.
 
 - vite-env.d.ts provides necessary typing support for Vite.
 
