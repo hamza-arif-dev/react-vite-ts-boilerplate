@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useContext } from "react";
+import { createContext, ReactNode } from "react";
+
 import { AxiosInstance } from "./AxiosInstanceBuilder";
 
 export type AxiosContextValue = {
@@ -16,14 +17,4 @@ export const AxiosProvider = (props: AxiosContextProviderProps) => {
   const { axiosInstance, children } = props;
 
   return <AxiosContext.Provider value={{ axiosInstance }}>{children}</AxiosContext.Provider>;
-};
-
-export const useAxiosProvider = () => {
-  const context = useContext(AxiosContext);
-
-  if (context === undefined) {
-    throw new Error("useAxiosProvider must be within AxiosProvider");
-  }
-
-  return context;
 };

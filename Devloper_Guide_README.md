@@ -1,6 +1,7 @@
 # 🧰 Developer Guide — react-vite-ts-boilerplate
 
-This guide explains how to contribute new features, hooks, constants, components, and more in a consistent and scalable way.
+This guide explains how to contribute new features, hooks, constants, components, and more in a consistent and scalable
+way.
 
 ---
 
@@ -22,7 +23,7 @@ react-vite-ts-boilerplate/
 │   └── main.tsx         # Entry point
 │
 ├── public/              # Static assets
-├── eslint.config.js     # ESLint config
+├── eslint.config.mjs     # ESLint config
 ├── vite.config.ts       # Vite config with path aliases
 └── README.md            # How to get started
 </pre>
@@ -37,8 +38,8 @@ react-vite-ts-boilerplate/
 
 - Create a folder with the name in **kebab-case**
 - Inside the folder:
-  - Create the hook file in **useCamelCase.ts**
-  - Create an `index.ts` that exports the hook and related types
+    - Create the hook file in **useCamelCase.ts**
+    - Create an `index.ts` that exports the hook and related types
 - General/shared types should go in a `types.ts`
 
 📁 Example:
@@ -79,8 +80,8 @@ constants/
 
 - Create a folder with the feature name in **kebab-case**
 - Inside the folder:
-  - Create the feature component in **PascalCase.tsx**
-  - Create an `index.ts` file that exports the component and types
+    - Create the feature component in **PascalCase.tsx**
+    - Create an `index.ts` file that exports the component and types
 - Export the feature from the global `features/index.ts`
 - APIs used only within this feature should go in a local `api/` subfolder
 
@@ -107,8 +108,8 @@ features/
 
 - Create a folder with the component name in **kebab-case**
 - Inside the folder:
-  - Component file in **PascalCase.tsx**
-  - Export it via `index.ts`
+    - Component file in **PascalCase.tsx**
+    - Export it via `index.ts`
 - Shared types go in `types.ts`
 
 📁 Example:
@@ -202,7 +203,7 @@ libs/design/
 ## 🧼 Naming & Formatting Conventions
 
 | Type             | Convention     | Example                 |
-| ---------------- | -------------- | ----------------------- |
+|------------------|----------------|-------------------------|
 | Folder Name      | kebab-case     | `product-list`          |
 | Hook Name        | useCamelCase   | `useProductList`        |
 | File Name        | PascalCase.tsx | `ProductList.tsx`       |
