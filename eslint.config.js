@@ -9,20 +9,20 @@ import { defineConfig } from "eslint-define-config";
 
 export default defineConfig([
   {
-    ignores: ["dist"],
+    ignores: ["dist"]
   },
   {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
       parser: tsParser,
-      globals: globals.browser,
+      globals: globals.browser
     },
     plugins: {
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
       import: importPlugin,
-      "@typescript-eslint": tsPlugin,
+      "@typescript-eslint": tsPlugin
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -37,25 +37,35 @@ export default defineConfig([
             {
               pattern: "@libs/**",
               group: "internal",
-              position: "after",
-            },
+              position: "after"
+            }
           ],
           pathGroupsExcludedImportTypes: ["builtin"],
           "newlines-between": "always",
           alphabetize: {
             order: "asc",
-            caseInsensitive: true,
-          },
-        },
+            caseInsensitive: true
+          }
+        }
       ],
+      "prefer-const": "error",
+      "no-console": "warn",
+
+      "@typescript-eslint/no-unused-vars": ["error"],
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+
+      "prettier/prettier": ["error", {}, { usePrettierrc: true }]
     },
     settings: {
       "import/resolver": {
         alias: {
           map: [["@libs/*", "./src/libs/*"]],
-          extensions: [".ts", ".tsx"],
-        },
-      },
-    },
-  },
+          extensions: [".ts", ".tsx"]
+        }
+      }
+    }
+  }
 ]);
